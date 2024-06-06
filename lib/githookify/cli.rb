@@ -1,29 +1,29 @@
 require 'rake'
 require 'thor'
-require 'githooks/setup'
+require 'githookify/setup'
 
-module Githooks
+module Githookify
   class CLI < Thor
     desc "version", "Print version"
     def version
-      puts ::Githooks::VERSION
+      puts ::Githookify::VERSION
     end
 
     desc "setup", "Setup the .githooks directory"
     def setup
-      Githooks::Setup.install
+      Githookify::Setup.install
       puts ".githooks directories created."
     end
 
     desc "enable", "Enable git hooks"
     def enable
-      Githooks::Setup.enable_hooks
+      Githookify::Setup.enable_hooks
       puts "Git hooks enabled."
     end
 
     desc "disable", "Disable git hooks"
     def disable
-      Githooks::Setup.disable_hooks
+      Githookify::Setup.disable_hooks
       puts "Git hooks disabled."
     end
 

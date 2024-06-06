@@ -1,4 +1,4 @@
-module Githooks
+module Githookify
   class Setup
     HOOKS = %w[applypatch-msg commit-msg fsmonitor-watchman post-update pre-applypatch pre-commit pre-merge-commit pre-push pre-rebase pre-receive prepare-commit-msg update]
 
@@ -28,7 +28,7 @@ module Githooks
           hook_path = File.join('.git', 'hooks', hook)
           File.open(hook_path, 'w') do |file|
             file.write("#!/bin/bash\n")
-            file.write("bin/githooks run #{hook} || exit 1\n")
+            file.write("githookify run #{hook} || exit 1\n")
           end
           File.chmod(0755, hook_path)
         end
