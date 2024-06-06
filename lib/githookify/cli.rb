@@ -1,12 +1,13 @@
 require 'rake'
 require 'thor'
+require 'githookify/version'
 require 'githookify/setup'
 
 module Githookify
   class CLI < Thor
     desc "version", "Print version"
     def version
-      puts ::Githookify::VERSION
+      puts Githookify::VERSION
     end
 
     desc "setup", "Setup the .githooks directory"
