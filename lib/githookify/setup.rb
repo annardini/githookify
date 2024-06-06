@@ -3,8 +3,16 @@ module Githookify
     HOOKS = %w[applypatch-msg commit-msg fsmonitor-watchman post-update pre-applypatch pre-commit pre-merge-commit pre-push pre-rebase pre-receive prepare-commit-msg update]
 
     def self.install
+      create_rakefile
       create_directories
       remove_sample_hooks
+    end
+
+    def self.create_rakefile
+      unless File.exist?('Rakefile')
+        rakefile_content = "task :default\n"
+        File.write('Rakefile', rakefile_content)
+      end
     end
 
     def self.create_directories
