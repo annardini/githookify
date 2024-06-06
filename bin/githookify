@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "githookify/cli"
+
+Githooks::CLI.start(ARGV)
