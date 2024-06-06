@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["contact@antonionardini.com"]
 
   spec.summary = "Create and manage custom git hooks the ruby way."
-  spec.homepage = "https://github.com/annardini/githookify/blob/master/README.md"
+  spec.homepage = "https://rubygems.org/gems/githookify"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
