@@ -2,9 +2,8 @@ require 'colorize'
 
 module Githookify
   class Utilities
-    def self.log(str, color)
-      output = str.send(color)
-      puts output
+    def self.log(text, color = :default)
+      color == :default ? puts(text) : puts(text.colorize(color))
     end
   end
 end

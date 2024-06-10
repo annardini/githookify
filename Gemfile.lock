@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    githookify (0.4.0)
+    githookify (0.4.1)
       colorize
       rake (~> 13.0)
       thor (~> 1.0)
